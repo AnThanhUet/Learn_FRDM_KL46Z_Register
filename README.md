@@ -1,1 +1,1 @@
-# Learn_FRDM_KL46Z-_Register
+# Learn_FRDM KL46Z Register

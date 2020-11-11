@@ -1,0 +1,38 @@
+Để enable được clock của PORTE:
+	set bit 13 của thanh ghi SCGC5 của module SIM
+Để enable được clock của PORTD:
+	set bit 12 của thanh ghi SCGC5 của module SIM
+
+Để cấu hình pin PTD5 là output:
+	Set bit 5 của thanh ghi GPIOD_PDDR lên 1
+Để cấu hình pin PTE29 là output:
+	Set bit 29 của thanh ghi GPIOE_PDDR lên 1
+
+Để chọn chức năng GPIO cho pin PTD5:
+	Set bit 10:8 của thanh ghi PORTD_PCR5 thành 1
+Để chọn chức năng GPIO cho pin PTE29:
+	Set bit 10:8 của thanh ghi PORTE_PCR29 thành 1
+
+Để set mức logic của pin PTD5 lên 1 hoặc về 0 hoặc đảo trạng thái:
+	Lên 1: Set bit 5 của thanh ghi GPIOD_PSOR lên 1
+	Về 0: Set bit 5 của thanh ghi GPIOD_PCOR lên 1
+	Toggle: Set bit 5 của thanh ghi GPIOD_PTOR lên 1
+	
+Để set mức logic của pin PTE29 lên 1 hoặc về 0 hoặc đảo trạng thái:
+	Lên 1: Set bit 29 của thanh ghi GPIOE_PSOR lên 1
+	Về 0: Set bit 29 của thanh ghi GPIOE_PCOR lên 1
+	Toggle: Set bit 29 của thanh ghi GPIOE_PTOR lên 1
+	
+Để cấu hình pull up resistor cho PTD5:
+	Set bit 1 (PE) của thanh ghi PORTD_PCR5 lên 1
+	Set bit 0 (PS) của thanh ghi PORTD_PCR5 lên 1
+	
+Để cấu hình pull up resistor cho PTE29:
+	Set bit 1 (PE) của thanh ghi PORTE_PCR29 lên 1
+	Set bit 0 (PS) của thanh ghi PORTE_PCR29 lên 1
+	
+Để đọc trạng thái của port D:
+	Nếu pin là input:
+		Đọc thanh ghi GPIOD_PDIR
+	Nếu pin là output:
+		Đọc thanh ghi GPIOD_PDOR
